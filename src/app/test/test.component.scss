@@ -1,0 +1,13 @@
+.clicked{
+    color: white;
+}
+
+.test{
+   &__header{
+       
+        &__title{
+            &__img{}
+            &__hamda{}
+        }
+    }
+}

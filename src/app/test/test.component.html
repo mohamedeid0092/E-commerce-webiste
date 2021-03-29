@@ -1,0 +1,63 @@
+
+
+
+<input (input)="onInputChange($event)" type="text">
+<p>{{inputText}}</p>
+<br>
+
+
+//two way binding  
+<input type="text" [(ngModel)]="inputText2">
+<p>{{inputText2}}</p>
+
+
+//property bining
+<!-- <img [attr.Src]="imgSrc" alt=""> -->
+<div [innerHTML]="inputText2"></div>
+
+
+<!-- ! 2 types of direvtives --- Attribute Directives -->
+<button (click)="onButtonClicked()" [disabled]='!buttonDisabled'>Click me</button>
+<br>
+<p [ngStyle]="{backgroundColor: getColor()}" >This button is Clicked</p>
+
+<p [ngClass]="{clicked: buttonClicked == true}" [ngStyle]="{backgroundColor: getColor()}" >This button is Clicked</p>
+
+<p [class]="buttonClicked && 'clicked'" [ngStyle]="{backgroundColor: getColor()}" >This button is Clicked</p>
+
+
+<!-- ! Structrue Drivtice -->
+
+<p *ngIf="buttonClicked; else hamda">online</p>
+<!-- <p #hamda>Offline</p> -->
+<ng-template #hamda>offline</ng-template>
+
+
+<div *ngFor="let element of elementsArray; let i = index">
+    {{i}} this is {{element.name}} his age is {{element.age}}
+
+    <div [ngSwitch] = "element.age">
+        <div *ngSwitchCase='24'>too small</div>
+        <div *ngSwitchCase='25'>Midiem</div>
+        <div *ngSwitchCase='26'>Old</div>
+        <div *ngSwitchDefault>N/A</div>
+    </div>
+</div>
+
+
+<div class='hamda1 hamda2' #d>loream</div>
+<input type="text" #i>
+
+<button (click)="submit()"> reveal div inner text</button>
+
+<div>
+    <input type="text">
+</div>
+
+
+
+<div class="test">
+    <div class="test__header">
+        <div class="test__header__tittle"></div>
+    </div>
+</div>
